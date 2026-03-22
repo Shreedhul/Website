@@ -21,6 +21,17 @@ body {
     padding-bottom: 15px;
 }
 
+.dropdown-colour {
+    background-color: rgb(214, 214, 214);
+    border-radius: 10px;
+    border: 1px solid black;
+    width: fit-content;
+    font-size: 14px;
+    padding: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 .bold {
     font-weight: bold;
 }
