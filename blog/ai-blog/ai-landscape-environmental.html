@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-MPVWB1E2SN"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-MPVWB1E2SN');
+        </script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../style.css">
+        <title>The Current and Future Landscape of AI: The Technology of AI</title>
+    </head>
+    <body>
+        <nav class="nav-bar">
+            <ul class="nav-bar-list nav-bar-text-design">
+                <a class="nav-bar" href="ai-blog-hub.html">Back To AI Blog Directory</a>
+            </ul>
+        </nav>
+
+        <br>
+
+        <div class="bg-colour">
+
+            <h1>The Current & Future Landscape of AI: Environment</h1>
+            <h2>20/03/26</h2>
+
+            <br>
+
+            <h2>Previous Blog</h2>
+
+            <p>
+                This is the third part of my project outlining the current and future landscape of AI. For those who didn’t read the first two parts, I went over the history of the development of AI technology and then how AI might impact the economy. Some terminology that I will use:
+            </p>
+
+            <p>
+                Large Language Model (LLM) – General purpose assistants that produce human like responses and reasoning. The most common example is ChatGPT 5.
+            </p>
+
+            <p>
+                Foundational Model (FM) – The LLM used by companies that don’t train their own LLMs in the background, so they don’t have to spend hundreds of millions of dollars on the training process.
+            </p>
+
+            <p>
+                Graphics Processing Unit (GPU) – A graphics card, which are used to train LLMs due to their ability to process many things in parallel which is extremely useful for speeding up the training process.
+            </p>
+
+            <p>
+                Compute – Processing power from a GPU needed to train models. Think of it as a unit for using GPUs. More compute = more AI training & usage, and compute is obtained from GPUs.
+            </p>
+
+            <p>
+                Data Centre – A designated building for storing, running and cooling AI infrastructure, one of the main ingredients being GPUs.
+            </p>
+            
+            <br>
+
+            <h2>How AI Impacts the Environment</h2>
+
+            <p>
+                There has been a lot of concern as to the impacts AI has on the environment. Training a cutting-edge large language model, at least at the moment, involves using tens of thousands of GPUs all running at full capacity for weeks to even months in one go! Technically there’s more variation in parts than GPUs (CPUs are used too as one example), but that isn’t too important for the point being made, so I’ll be using GPU as an all-encompassing term for all the technology used in these data centres that consume electricity, of which in reality there are several.
+            </p>
+
+            <p>
+                This number has approximately tripled to quadrupled in the last 2-3 years as well, so the numbers could grow even larger! It’s a big topic of discussion, so it’s important to be informed before deciding if you think AI is a threat to be stopped, or if working along with AI in sensible ways could benefit humanity in a way that doesn’t destroy the planet!
+            </p>
+
+            <br>
+
+            <h2>An Important Distinction</h2>
+
+            <p>
+                It is not uncommon for the public to confuse AI training with AI inference, particularly when it comes to debating about AI’s effects on the environment. AI training is the process of creating the LLM using past data, a very power intensive process, and the main AI-related contributor to the negative effects on the environment. Inference, which in non-technical terms is just using the LLMs after they’ve been trained to have a conversation (so every time you use an LLM to get a response, that is inference), does not contribute as much, though the impact is non-negligible. Though this is from the aggregate of all users which sum to make a sizeable portion, but an important question is this:
+            </p>
+
+            <p>
+                How much does each person contribute on average, and how does this compare to average everyday consumption?
+            </p>
+
+            <p>
+                Off this, is boycotting or against AI on a personal level or protesting it’s spread and development on a societal level actually sensible? Could AI, in a roundabout way, help the environment? Or at the very least, can we mitigate its negative impacts and if so, by how much? I think the answer is more nuanced than you would initially expect!
+            </p>
+
+            <br>
+
+            <h2>Usage for Training</h2>
+
+            <p>
+                The electricity usage in the process of training AI is massive. Current frontier models will use about 600MWh/day for training. Though this isn’t every single day of the year, as mentioned before, given this takes 8-9 months for current cutting-edge models, we can say the average day of the year (with 3 months of down time) is about 75% this number, so 450MWh/day average year-round. Now, while this is obviously a lot of energy, this is a one-time cost for everyone to use it. For sake of comparisons I will be making in the next paragraph, we then divide this by the number of people who use this LLM being trained to get the average amount of energy used to train the LLM per person. ChatGPT reportedly gets 800-900 million weekly users and Gemini reportedly gets around 750 million weekly users. Let’s just say 800 million people use this LLM. Then 450MWh/day divided by 800 million gives 0.56 Wh/day to 2dp.
+            </p>
+
+            <p>
+                Then, during inference, the amount of energy used for one query largely depends on the length of the question-and-answer length. The reported median is 0.34wh. Say the mean number of daily prompts for a given user is (as a very rough approximate) 15 prompts, leading to a total average of 5.1Wh/day used per person on average.
+            </p>
+
+            <p>
+                If we add these two totals up, 0.56+5.1=5.67Wh/day is our approximation for the energy consumption of the average LLM user.
+            </p>
+
+            <br>
+
+            <h2>The Cooling Process</h2>
+
+            <p>
+                Running these GPUs for so long inevitably makes them heat up, just as they do in a regular computer. Just as a regular computer has cooling mechanisms to prevent them overheating, the same is true for the intensive use in these data centres. They typically use a combination of air cooling as well as water cooling.
+            </p>
+
+            <p>
+                Air cooling is done via air-conditioning and fans. Just like powering the GPUs, powering fans and air-conditioning also consumes a significant amount of electricity.
+            </p>
+
+            <p>
+                On top of this, there is water-based methods for cooling. The details aren’t relevant to the point being made, but these methods require about 30-50% less electricity than the air-cooling methods. However, these cooling mechanisms require clean water and there have been large concerns about removing clean water from local communities to be used for cooling in these data centres. I will go more in-depth into this topic in another blog in this series of the landscape of AI but just keep in mind this non-environmental downside of water-based techniques for cooling.
+            </p>
+
+            <p>
+                Both methods are used together to help the massive task of cooling within these data centres. This cooling process takes up about 7% of the total energy consumption, increasing 5.67Wh/day to 6.07Wh/day. A very modest increase. This is also the total, nothing more to add, so approximately 6Wh/day is the amount of energy used by the average AI consumer per day.
+            </p>
+
+            <br>
+
+            <h2>Total Energy Usage</h2>
+
+            <p>
+                Other things that use approximately 6Wh/day of energy as well:
+            </p>
+
+            <p>
+                &emsp;-	Charging 50% of your phone battery
+            </p>
+
+            <p>
+                &emsp;-	Using a lightbulb for 30 minutes
+            </p>
+            
+            <p>
+                &emsp;-	Using a laptop for a few minutes
+            </p>
+
+            <br>
+
+            <p>
+                When you look at the total consumption of energy AI and compare it to the total consumption of energy of its userbase without AI, it’s not that much energy. I’ve heard so much strange statistics about this topic from multiple people, and it is made-up hearsay. If you don’t believe me, get the numbers yourself and do the maths! I think this is an important point because I think the false stats/comparisons must be very well circulated for me to have heard them from several independent people, which I think is a shame.
+            </p>
+
+            <br>
+
+            <h2>Ways of Mitigating the Impact</h2>
+
+            <p>
+                That being said, while relative to what we already consume in electricity it is not huge, as an aggregate it’s still definitely a number big enough to have motivations to improve upon it, given the current state and the expected projections of global warming at the moment.
+            </p>
+
+            <p>
+                We already utilise AI to help with global warming in some ways. I have listed just a few of them below:
+            </p>
+
+            <p>
+                &emsp; 1)	Grid Forecasting and Dispatch Optimisation – AI predicts the demand of electricity and also predicts the amount of renewable energy that will be available based on the forecasted weather in the coming hours and days. Using this information, you can then schedule the generators which run and how much reserve capacity (surplus charge effectively) is needed. This allows us to optimize the problem of using as little fossil fuels as possible.
+            </p>
+
+            <p>
+                &emsp; 2)	Data Centre Cooling Optimisation: - AI systems can automatically adjust the amount of cooling in the data centres to be just the right temperature, so the centres are cool enough to allow the GPUs to not overheat whilst at the same time not making it redundantly cold where you wasted energy on extra chillness that did not prevent overheating. To be fair this will have already been accounted for the 6Wh/day but thought it was interesting! Also, this temperature optimization mechanism is applied to several industries. For example, in the production of cement, steel and other similar heavy industries, their production involves careful monitoring of pressure and temperature, and in a similar way, being more precise with these parameters can optimise the amount of “redundant” energy wasted! 
+            </p>
+
+            <p>
+                &emsp; 3)	Transport Routing Optimization – The optimization problem for optimising routing for traffic as well as the prediction of traffic can be improved using AI. Using AI, we can figure out the best route when considering where traffic is concentrated, minimizing distance and minimizing idle time. This then minimizes the amount of fuel and energy consumed by drivers within a more complex system such as public transport and delivery drivers.
+            </p>
+
+            <p>
+                &emsp; 4)	Improving CO2 Capture – This is officially known as “Carbon Capture” if CO2 is being removed as it exits the source or “Air Capture” if removing CO2 from the atmosphere. Using AI, we can optimize this technology under similar principles as those above with its optimizing of certain conditions (such as chemical reactions and temperatures) to get an optimized outcome.
+
+            </p>
+
+            <p>
+                Also, all the negative effects come down to using a lot of electricity and creating carbon footprint. If we could use renewable sources of energy to power these data centres, even at least partially, this could also mitigate the negative impacts AI has on the environment.
+            </p>
+
+            <p>
+                For all we know, AI could come up with extremely effective technology to combat global warming! Especially since it has managed to solve an unsolved problem in science with AlphaFold. In the next blog, I’ll be going over current and potential future uses of AI where I’ll cover this topic more. This is purely reverie, but at the same time, I really think it’s a point worth considering given the genuine powers AI has, even at such a young age.
+            </p>
+
+            <br>
+
+            <h2>The Impact of Data Centres on Local Communities</h2>
+
+            <p>
+                There are several ways in which data centres can affect the local communities.
+            </p>
+
+            <p>
+                Firstly, they massively hog local resources. As mentioned before, these data centres in part use water as a cooling mechanism. However, the water needs to be clean water, which means these data centres consume millions of gallons of local drinking water. In some areas, with such a large consumption, this could genuinely lead to shortages of drinking water for the local community. This is probably the worst impact and genuinely could affect quality of life in areas with already dubious supply. On top of this, since they use a lot of electricity, they hog up a lot of the local electricity supply which again could lead to shortages of electricity for the affected local community.
+            </p>
+
+            <p>
+                These data centres can also take up farmland, with those in charge of building data centres buying lots of farmland to build these data centres, sometimes even over market price (which portrays their keenness to buy a lot of farmland fast). These farmers can feel quite pressured; you can imagine how pushy the government could be on this topic given the financial and geo-political incentives to scale AI as big and fast as possible. This can be a big issue for farmers when families could have lived there for generations, and what a shame it is for them to be moved for the sake of a data centre! On top of this, taking farmland is going to lower crop yield, which in turn will reduce food supply.
+            </p>
+
+            <p>
+                Another issue is the air pollution they create, which affects the quality of air around the data centres. Air pollution can affect health in several ways. For pregnant women, poor air quality is strongly correlated with low birth weight, preterm birth, and impaired lung development in the foetus for their developing baby. On top of this, poor air quality can cause/worsen asthma as well as other cardiovascular ailments. These data centres also cause noise pollution, which can rightly annoy the local community.
+            </p>
+
+            <p>
+                On the bright side, these data centres provide jobs and a lot of property tax revenue to the local community, though a portion of these jobs are temporary for the construction of these data centres and finish once the data centre is built. The genuine long-term jobs for maintenance of these centres are limited and potentially can be taken by other workers not from the local community. While there is economic benefit, it does not necessarily outweigh the downsides. Particularly with the high speed these centres are being built, suddenly having such a project sprung onto these communities understandably causes frustration.
+            </p>
+
+            <br>
+
+            <h2>Is Boycotting AI the Way Forwards / Summary</h2>
+
+            <p>
+                While AI does require using a large amount of electricity to train and maintain, there are some ways that AI helps offset the carbon footprint of society, and who knows what more it could do for the environment in the future! Likewise, while it is important to minimize the carbon footprint of AI, in my view at least, the public perception of how much energy it is when you consider the user base that use AI is often overstated. I don’t believe the environment is a reason to prevent AI development and I think even for people day to day, not using AI for the environment is the same as not using your phone for the environment. There’s a certain level of electricity usage and carbon footprint that most people accept because the benefits to their personal lives are so substantial, and I believe AI would fall into this category for almost anyone with how useful it is when used sensibly!
+            </p>
+
+            <p>
+                I could understand taking a stance similar to not consuming meat for the environment, so rather than saying “you are causing x footprint when you use AI which is too much to justify”, you are saying you don’t want to contribute to this industry that on aggregate has “y” carbon footprint, though again I would disagree saying it’s just not enough relative to the everyday carbon footprint most people accept to justify specifically targeting AI.
+            </p>
+
+            <p>
+                That said, these are only arguments as to why you should not raise an eyebrow at AI from an environmental standpoint. There are other aspects which I think are more justified, though these reasons (which I will get into in a later blog in this series on the landscape of AI) will vary company to company, rather than the AI industry as a whole. By company to company, I mean companies that produce LLMs, not companies that consume them.
+            </p>
+
+        </div>
+
+    </body>
+</html>
