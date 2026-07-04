@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-MPVWB1E2SN"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-MPVWB1E2SN');
+        </script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../style.css">
+        <title>Is RLHF a contrived bandage for LLM behaviour?</title>
+    </head>
+
+    <body>
+        <nav class="nav-bar">
+            <ul class="nav-bar-list nav-bar-text-design">
+                <a class="nav-bar" href="ai-blog-hub.html">Back To AI Blog Directory</a>
+            </ul>
+        </nav>
+
+        <br>
+
+        <div class="bg-colour">
+
+            <h2>04/07/26</h2>
+
+            <h1>Is RLHF a contrived bandage for LLM behaviour?</h1>
+            
+            <p>
+                Reinforcement Learning (RL) is a method of training in machine learning. Rather than assuming a relationship between your features and target and then coming up with a cost function to quantify how far your predictions are from the true value and thus how good your predictions are (which requires a “correct answer” to compare to), RL trains data purely using a “reward”.
+            </p>
+
+            <p>
+                For example, suppose you wanted to build a model that can play chess. But how do you know if a given move is any good or not? Not only is the feedback delayed (you have to wait for the game to finish), but you do not know how much this particular move contributed to the outcome of the game. What you do is you give any given move a “score” which represents how “good” of a move it is. Then, after the end of a game, if the AI wins, then every win gains a point, and if it a loss then every move loses a point. After an extremely large number of games, each move will have a score attributed to it. Moves with high average scores (i.e. considering how many times that move appeared) are moves which are increasing the chances of winning and thus are considered good moves.
+            </p>
+
+            <p>
+                This allows the AI to learn what “good” moves are so they can play them in game, and it is done without any immediate explicit answer, but rather through rewards (the reward being the score gain each move gets after a win). Hence reinforcement learning. Through rewards, good/winning is reinforced.
+            </p>
+
+            <p>
+                Now, a specific type of reinforcement learning is “Reinforcement Learning Through Human Feedback” or RLHF for short. This is where the “score” depends on human feedback, rather than following an algorithm. Humans see the choice/output the model makes and decides whether it is good or bad, and this feedback is used as input into a “scoring model” to determine the comparative quality of different responses in different contexts. So subjective human opinion dictates penalties received by these scoring models in this case. There is also reinforcement learning through verifiable rewards (RLVR). This is very similar, but instead of using a human proxy for certain behaviour, it is applied to objective ground truths and rather than a human deciding what is good and bad, a robot checker does the verification automatically, making it a much faster training process than RLHF! This was what started the huge LLM coding wave, since RLVR is perfect for training LLMs on coding problems.
+            </p>
+
+            <p>
+                Currently, LLM training is very heavily reliant on RLHF. LLMs are trained on terabytes of data using massive amounts of compute, but this is only the first “phase” of the training process. After this step, the LLM is incredibly difficult to steer. While it replies coherently, it does not always stay on task, not answering the question and generally being unco-operative, and has no guardrails. After the model is “fine-tuned” using supervised learning and human created prompts and “ideal” answers, RLHF is needed to “tune” it into a helpful chatbot that does not output anything inappropriate. The next step is to use RLHF on massive amounts of labelled data to “tailor” the training into actually functioning as a coherent robot assistant. InstructGPT (which came out between GPT 3 and 3.5, in fact it was largely just GPT 3 + RLHF + SFT!) was the first model to utilise RLHF in the way it is currently utilised in frontier LLMs. 
+            </p>
+
+            <p>
+                This is a massive undertaking. A model trained off terabytes of data, needing to be able to function in an unimaginably eclectic set of scenarios while being as accurate as possible and causing as little harm as possible to the user as well as anyone else is extremely hard to cover. The logistics behind this involve these LLM producing companies to outsource the labour using an external company which they are typically partnered with. These people being employed (typically experts in some field) will be shown a human prompt and then two LLM responses (related to their field of expertise) and choose the better reply. Overtime the model then accumulates data on the type of replies that humans “like” and the model will tinker itself accordingly.
+            </p>
+
+            <p>
+                One issue with RL and RLHF is its own equivalent of overfitting to supervised learning, sometimes called “Reward Hacking”. While in supervised learning overfitting comes from overfitting training to a particular dataset, leading to taking noise into account and creating a model that is not generalisable (that is, it cannot make good predictions on other datasets), RL will overfit to the environment. What that means is, RL gamifies the process to optimize getting as much positive feedback as possible, even if it deviates from the desired outcome. I’ll give concrete examples in ways that LLMs right now are thought to fall short as a direct result of overfitting with RLHF.
+            </p>
+
+            <p>
+                Firstly, sycophancy is caused by RLHF. Google’s definition is “the behaviour of using insincere, excessive flattery or agreement to gain favour, typically from someone of higher status or power.” LLMs are known to do this, and it isn’t an intentional design but an unfortunate consequence of RLHF overfitting. Generally, when humans are choosing which response they like best of two, they are more likely to choose responses that are more agreeable. Unfortunately, after getting this signal over and over again after masses of responses, the model “overcorrects” and goes all in on being agreeable and flattering.
+            </p>
+
+            <p>
+                Secondly is bullshitting. LLMs are known to bullshit a lot. By this I mean give a wrong answer confidently, even when it “knows” it doesn’t know. Again, when given two responses, people typically prefer the answer that has a bit more conviction. Again, over the mass amounts of positive reinforcement, the model overcorrects and holds far too much conviction when it does not know the answer or is not sure. To be fair to RLHF, you could also argue this is a consequence of the internet, more often than not, being filled with confidence than hedging (aint that the truth), and that models have no concept of what “right and wrong” is since it is just trained on data and predicting the next token rather than an actual thoughtful being.
+            </p>
+
+            <p>
+                The last example I’ll use is bland/homogenised prose. To a trained eye, it’s immediately obvious when text was AI generated. It just looks a certain way. This is because the prose is extremely unchanging. It chooses prose that does best in the RLHF stage of training. Since this prose is seen as “the optimal” for scoring points in the reinforcement, it never deviates from it.
+            </p>
+
+            <p>
+                The phenomenon of RLHF overfitting responses in LLMs has been acknowledged by the literature as well as experts. The question is, can we “fix” RLHF? Or do we need a completely new paradigm to replace it? Or maybe a less extreme shift while keeping some RLHF alive? Or, with enough and sophisticated enough RL, can we eventually “even out all the gaps” and give the LLM enough scenarios in the RL stages of training that it knows how to deal with most situations properly, rather than having these quirks baked into the LLM as a result of the currently over-specified, nuance lacking RL we have today? Maybe if AI itself can generate RL scenarios and run through these scenarios it can generate enough cases to fix the apparent weaknesses LLMs have as a consequence of current RL techniques.
+            </p>
+
+            <p>
+                As it stands, with scaling laws reaching the point of diminishing returns (more data returns less and less gains), RL is actually still going very strong in terms of improvements for LLMs, but this is because RLHF is only half the picture for RL in LLMs. As I mentioned before, RLVR is the other half, and this is largely driving the continuing progress on the RL side (though inevitably diminishing returns will hit here as well at some point down the line.) Given RLHF is not even the driver to this extra performance and is more about managing behaviour, is continuing to develop RLHF techniques the obvious path to “AGI” or a step away from the direction that is obfuscated by RLHF in the first place? Is it a bandage to a flaw in LLM architecture? This depends on if the developments of RLHF can “iron” out the weakness as mentioned earlier through more scenarios for RL training, whether we want to do that in the first place or find out whether this issue is a small symptom of us going down a fundamentally incorrect route with current AI architecture, and in general more effective RL algorithms and more sample efficiency (which is the ability to learn the same amount with fewer data points).
+            </p>
+
+        </div>
+
+    </body>
+</html>
